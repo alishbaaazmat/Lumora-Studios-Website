@@ -353,3 +353,147 @@ header{
         max-height: 450px;
     }
 }
+
+/* SERVICES SECTION */
+
+.services {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 6rem 1rem;
+}
+
+.section__header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section__header p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: var(--primary-color);
+}
+
+.section__header h2 {
+    margin-bottom: 0.75rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.section__header span {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.services__list {
+    border-top: 1px solid #ddd;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 60px 120px 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
+    transition: 0.3s ease;
+}
+
+.service__number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.service img {
+    width: 120px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.service__content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.service__content p {
+    max-width: 600px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.service__link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.service__link:hover {
+    color: var(--primary-color-dark);
+}
+
+.service:hover {
+    padding-left: 1rem;
+}
+
+.service:hover img {
+    transform: scale(1.04);
+}
+
+/* Mobile Services */
+
+@media (width <= 768px) {
+
+    .services {
+        padding: 4rem 1rem;
+    }
+
+    .section__header {
+        margin-bottom: 2rem;
+    }
+
+    .section__header h2 {
+        font-size: 2.2rem;
+    }
+
+    .section__header span {
+        font-size: 0.9rem;
+    }
+
+    .service {
+        grid-template-columns: 40px 90px 1fr;
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .service img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .service__content {
+        grid-column: 3;
+    }
+
+    .service__content h3 {
+        font-size: 1.1rem;
+    }
+
+    .service__content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .service__link {
+        grid-column: 3;
+        font-size: 0.8rem;
+    }
+
+}
