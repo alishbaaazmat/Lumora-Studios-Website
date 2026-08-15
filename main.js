@@ -86,7 +86,20 @@ const observer = new IntersectionObserver(
         threshold: 0.3
     }
 );
-
 sections.forEach((section) => {
     observer.observe(section);
+});
+
+const contactForm = document.querySelector(".contact__form form");
+contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    if (name === "" || email === "" || message === "") {
+        alert("Please fill in all the required fields.");
+        return;
+    }
+    alert("Thank you! Your inquiry has been received.");
+    contactForm.reset();
 });

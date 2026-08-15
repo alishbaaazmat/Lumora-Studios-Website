@@ -108,9 +108,27 @@ header{
     max-width: var(--max-width);
     margin: auto;
     padding: 2rem 1rem;
-
     display:grid;
     gap:4rem 1rem;
+}
+
+header {
+    position: relative;
+    isolation: isolate;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #faf8f9;
+
+    z-index: -1;
 }
 
 .header__image {
@@ -164,7 +182,8 @@ header{
     text-align: left;
 }
 
-.header__btn button{
+.header__btn  a{
+    display: inline-block;
     padding: 1rem 1.5em;
     outline: none;
     border: none;
@@ -188,7 +207,7 @@ header{
     background-color: var(--primary-color) !important;
 }
 
-.header__btn button:hover {
+.header__btn a:hover {
     background-color: var(--primary-color-dark);
 }
 
@@ -213,13 +232,28 @@ header{
 
 @media (width > 768px) {
     nav {
-        position: static;
+        position: relative;
+        isolation: isolate;
         padding: 2.5rem 1rem 1.5rem;
         max-width: var(--max-width);
         margin-inline: auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
+    }
+
+    nav::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background-color: #faf8f9;
+
+        z-index: -1;
     }
 
     .nav__header{
@@ -339,8 +373,9 @@ header{
         gap: 0.8rem;
     }
 
-    .header__btn button {
+    .header__btn a {
         width: 220px;
+        text-align: center;
     }
 
     .header__stats {
@@ -362,6 +397,25 @@ header{
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 6rem 1rem;
+}
+
+.services {
+    position: relative;
+    isolation: isolate;
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #fdfbfc;
+
+    z-index: -1;
 }
 
 .section__header {
@@ -609,11 +663,6 @@ header{
     opacity: 1;
 }
 
-.portfolio__item:nth-child(2)
-.portfolio__item:nth-child(4) {
-    height: 100%;
-}
-
 /* Mobile Portfolio */
 
 @media (width <= 768px) {
@@ -675,6 +724,23 @@ header{
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 7rem 1rem;
+
+    position: relative;
+    isolation: isolate;
+}
+
+.about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: #fdfbfc;
+
+    z-index: -1;
 }
 
 .about__content {
