@@ -987,3 +987,36 @@ header{
 }
 
 }
+
+/* FOOTER */
+
+.footer {
+    padding: 1rem 1rem;
+    text-align: center;
+    background-color: #782a59;
+    color: var(--white);
+}
+
+.footer h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.08rem;
+}
+
+.footer p {
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer span {
+    font-size: 0.75rem;
+    color: #bdbdbd;
+}
+
+@media (width <= 768px) {
+.footer {
+    padding: 0.015rem 0.5rem;
+}
+}
