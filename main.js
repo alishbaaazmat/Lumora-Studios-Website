@@ -12,7 +12,13 @@ menuBtn.addEventListener("click", () => {
     )
 });
 
-navLinks.addEventListener("click" , () => {
+navLinks.addEventListener("click", (event) => {
+    const clickedLink = event.target.closest("a");
+    if (!clickedLink) return;
+    navLinks.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("active");
+    });
+    clickedLink.classList.add("active");
     navLinks.classList.remove("open");
     menuBtnIcon.setAttribute("class", "ri-menu-4-line");
 });
@@ -52,4 +58,35 @@ ScrollReveal().reveal(".header__socials  li",{
     ...scrollRevealOption,
     delay: 2500,
     interval: 500,
+});
+
+const sections = document.querySelectorAll("header[id], section[id]");
+const navLinksAll = document.querySelectorAll(".nav__links a");
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+
+                navLinksAll.forEach((link) => {
+                    link.classList.remove("active");
+                });
+
+                const activeLink = document.querySelector(
+                    `.nav__links a[href="#${entry.target.id}"]`
+                );
+
+                if (activeLink) {
+                    activeLink.classList.add("active");
+                }
+            }
+        });
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+sections.forEach((section) => {
+    observer.observe(section);
 });

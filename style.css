@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -88,19 +91,18 @@ nav {
     white-space: nowrap;
 }
 
+.nav__links a.active {
+    display: block;
+    padding: 0.7rem 2rem;
+    border: 2px solid var(--white);
+    border-radius: 6px;
+}
+
 .nav__links li {
     width: 100%;
     text-align: center;
 }
 
-.nav__links a.active {
-    display: block;
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-    text-align: center;
-}
 
 header{
     max-width: var(--max-width);
@@ -1019,4 +1021,15 @@ header{
 .footer {
     padding: 0.015rem 0.5rem;
 }
+}
+
+@media (width <= 768px) {
+
+    .nav__links a.active {
+        display: block;
+        padding: 0.7rem 1.5rem;
+        border: 1px solid var(--white);
+        border-radius: 6px;
+    }
+
 }
